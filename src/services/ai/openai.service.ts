@@ -4,7 +4,7 @@ import { Observable, catchError, concatMap, from, map, of } from 'rxjs';
 import { fromPromise } from 'rxjs/internal/observable/innerFrom';
 
 import { AIService, AIServiceError, AIServiceParams } from './ai.service.js';
-import { generateCommitMessage } from '../../utils/openai.js';
+import { generateVariableName } from '../../utils/openai.js';
 
 export class OpenAIService extends AIService {
     constructor(private readonly params: AIServiceParams) {
@@ -19,7 +19,7 @@ export class OpenAIService extends AIService {
 
     generateVariableName$(): Observable<ReactiveListChoice> {
         return fromPromise(
-            generateCommitMessage(
+            generateVariableName(
                 this.params.config.OPENAI_URL,
                 this.params.config.OPENAI_PATH,
                 this.params.config.OPENAI_KEY,

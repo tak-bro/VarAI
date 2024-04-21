@@ -35,7 +35,7 @@ export class OllamaService extends AIService {
 
     generateVariableName$(): Observable<ReactiveListChoice> {
         if (this.params.config.OLLAMA_STREAM) {
-            return this.generateStreamCommitMessage$();
+            return this.generateStreamVariableName$();
         }
 
         return fromPromise(this.generateMessage()).pipe(
@@ -107,7 +107,7 @@ export class OllamaService extends AIService {
         );
     };
 
-    generateStreamCommitMessage$(): Observable<ReactiveListChoice> {
+    generateStreamVariableName$(): Observable<ReactiveListChoice> {
         return fromPromise(this.checkIsAvailableOllama()).pipe(
             switchMap(() => this.generateStreamChoice$()),
             scan((acc: ReactiveListChoice[], data: ReactiveListChoice) => {

@@ -18,11 +18,11 @@ body:
           required: true
     - type: input
       attributes:
-          label: aicommit2 version
+          label: varai version
           description: |
               Run and paste the output of:
               ```sh
-              aicommit2 --version
+              varai --version
               ```
           placeholder: v0.0.0
       validations:

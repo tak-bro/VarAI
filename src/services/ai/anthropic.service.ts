@@ -34,7 +34,7 @@ export class AnthropicService extends AIService {
     generateVariableName$(): Observable<ReactiveListChoice> {
         // TODO: add below
         // if (isStream) {
-        //     return this.generateStreamCommitMessage$();
+        //     return this.generateStreamVariable$();
         // }
 
         return fromPromise(this.generateMessage()).pipe(
@@ -82,7 +82,7 @@ export class AnthropicService extends AIService {
         });
     };
 
-    generateStreamCommitMessage$(): Observable<ReactiveListChoice> {
+    generateStreamVariable$(): Observable<ReactiveListChoice> {
         return this.generateStreamChoice$().pipe(
             scan((acc: ReactiveListChoice[], data: ReactiveListChoice) => {
                 const isDone = data.description === DONE;

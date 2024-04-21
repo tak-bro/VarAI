@@ -167,7 +167,7 @@ const getTokens = (prompt: string, model: TiktokenModel) => {
     return tokens;
 };
 
-export const generateCommitMessage = async (
+export const generateVariableName = async (
     url: string,
     path: string,
     apiKey: string,

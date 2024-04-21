@@ -9,9 +9,6 @@ import { fileExists } from './fs.js';
 
 import type { TiktokenModel } from '@dqbd/tiktoken';
 
-const commitTypes = ['', 'conventional', 'gitmoji'] as const;
-export type CommitType = (typeof commitTypes)[number];
-
 const { hasOwnProperty } = Object.prototype;
 export const hasOwn = (object: unknown, key: PropertyKey) => hasOwnProperty.call(object, key);
 
@@ -271,7 +268,7 @@ export type ValidConfig = {
     [Key in ConfigKeys]: ReturnType<(typeof configParsers)[Key]>;
 };
 
-const configPath = path.join(os.homedir(), '.aicommit2');
+const configPath = path.join(os.homedir(), '.varai');
 
 const readConfigFile = async (): Promise<RawConfig> => {
     const configExists = await fileExists(configPath);

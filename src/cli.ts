@@ -10,11 +10,6 @@ cli(
     {
         name: 'VarAI',
         version,
-        /**
-         * Since this is a wrapper around `git commit`,
-         * flags should not overlap with it
-         * https://git-scm.com/docs/git-commit
-         */
         flags: {
             message: {
                 type: String,

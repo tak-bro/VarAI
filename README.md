@@ -94,7 +94,7 @@ This will create a `.varai` file in your home directory.
 
 4. Run VarAI with your staged in git repository:
 ```shell
-varai -m "recommend a function name for generating variable names"
+varai -m "this class is for generating variable names"
 ```
 
 ## Using Locally
@@ -121,7 +121,7 @@ varai config set OLLAMA_TIMEOUT=<timout> # Optional. default is 100000ms (100s)
 
 4. Run VarAI with your staged in git repository
 ```shell
-varai -m "Please generate some class names for managing session"
+varai -m "this class is managing session"
 ```
 
 ## Usage
@@ -499,9 +499,9 @@ npm update -g varai
 > - For double quotes ("), use \\"
 > - For single quotes ('), use \\'
 
-![how-to-get-cookie](https://github.com/tak-bro/varai/assets/7614353/66f2994d-23d9-4c88-a113-f2d3dc5c0669)
+![how-to-get-cookie](https://github.com/tak-bro/varai/blob/main/img/cookie-clovax.png?raw=true)
 
-![how-to-get-clova-x-cookie](https://github.com/tak-bro/varai/assets/7614353/dd2202d6-ca1a-4a8a-ba2f-b5703a19c71d)
+![how-to-get-clova-x-cookie](https://github.com/tak-bro/varai/blob/main/img/cookie-huggingface.png?raw=true)
 
 ## Disclaimer
 
