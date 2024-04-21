@@ -11,7 +11,7 @@ const consoleManager = new ConsoleManager();
 
 export default async (
     message: string | undefined,
-    locale: string | undefined,
+    language: string | undefined,
     generate: number | undefined,
     useClipboard: boolean,
     prompt: string | undefined,
@@ -41,7 +41,7 @@ export default async (
             proxy: env.https_proxy || env.HTTPS_PROXY || env.http_proxy || env.HTTP_PROXY,
             temperature: env.temperature,
             generate: generate?.toString() || env.generate,
-            locale: locale?.toString() || env.locale,
+            language: language?.toString() || env.language,
             prompt: prompt?.toString() || env.prompt,
         });
 

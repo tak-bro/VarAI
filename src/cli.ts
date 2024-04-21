@@ -16,9 +16,9 @@ cli(
                 description: `Message that represents the user's request or instruction to AI (Required)`,
                 alias: 'm',
             },
-            locale: {
+            language: {
                 type: String,
-                description: 'Locale to use for the generated variable names (default: en)',
+                description: 'Code Language to use for the generated variables',
                 alias: 'l',
             },
             generate: {
@@ -28,7 +28,7 @@ cli(
             },
             clipboard: {
                 type: Boolean,
-                description: 'Copy the selected name to the clipboard',
+                description: 'Copy the selected name to the clipboard (default: true)',
                 alias: 'c',
                 default: true,
             },
@@ -48,7 +48,7 @@ cli(
         ignoreArgv: type => type === 'unknown-flag' || type === 'argument',
     },
     argv => {
-        varAI(argv.flags.message, argv.flags.locale, argv.flags.generate, argv.flags.clipboard, argv.flags.prompt, rawArgv);
+        varAI(argv.flags.message, argv.flags.language, argv.flags.generate, argv.flags.clipboard, argv.flags.prompt, rawArgv);
     },
     rawArgv
 );

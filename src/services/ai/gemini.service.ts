@@ -37,9 +37,9 @@ export class GeminiService extends AIService {
     private async generateMessage(): Promise<string[]> {
         try {
             const userInput = this.params.userInput;
-            const { locale, generate, prompt: userPrompt } = this.params.config;
+            const { language, generate, prompt: userPrompt } = this.params.config;
             const maxLength = this.params.config['max-length'];
-            const prompt = this.buildPrompt(userInput, locale, generate, maxLength, userPrompt);
+            const prompt = this.buildPrompt(userInput, language, generate, maxLength, userPrompt);
 
             const maxTokens = this.params.config['max-tokens'];
             const model = this.genAI.getGenerativeModel({

@@ -1,5 +1,15 @@
 import { ReactiveListChoice } from 'inquirer-reactive-list-prompt';
 
+export const extractNumberedList = (inputText: string): string[] => {
+    const pattern = /^\d+\..*/gm;
+    const matches: string[] = [];
+    let match;
+    while ((match = pattern.exec(inputText)) !== null) {
+        matches.push(match[0]);
+    }
+    return matches;
+};
+
 export const getRandomNumber = (min: number, max: number): number => {
     const minValue = Math.ceil(min);
     const maxValue = Math.floor(max);

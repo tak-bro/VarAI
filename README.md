@@ -143,11 +143,11 @@ varai -m "Please generate some class names for managing session"
 varai --message "Please generate some class names for managing session"  # or -m <s>
 ```
 
-##### `--locale` or `-l`
-- Locale to use for the generated variables (default: **en**)
+##### `--language` or `-l`
+- Code Language to use for the generated variables
 
 ```sh
-varai --locale <s> # or -l <s>
+varai --language <s> # or -l <s>
 ```
 
 ##### `--generate` or `-g`
@@ -159,15 +159,15 @@ varai --generate <i> # or -g <i>
 
 > Warning: this uses more tokens, meaning it costs more.
 
+##### `--prompt` or `-p`
+- Additional prompt to let users fine-tune provided prompt
+
 ##### `--clipboard` or `-c`
 - Copy the selected variable name to the clipboard (default: **true**)
 
 ```sh
 varai --clipboard=false # or -c=false
 ```
-
-##### `--prompt` or `-p`
-- Additional prompt to let users fine-tune provided prompt
 
 ```sh
 varai --prompt <s> # or -p <s>
@@ -212,7 +212,7 @@ varai config set OPENAI_KEY=<your-api-key>
 You can also set multiple configuration options at once by separating them with spaces, like
 
 ```sh
-varai config set OPENAI_KEY=<your-api-key> generate=3 locale=en
+varai config set OPENAI_KEY=<your-api-key> generate=3 language=C++
 ```
 
 ## Options

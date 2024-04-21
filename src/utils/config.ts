@@ -175,18 +175,11 @@ const configParsers = {
         }
         return prompt;
     },
-    locale(locale?: string) {
-        if (!locale) {
-            return 'en';
+    language(language?: string) {
+        if (!language) {
+            return '';
         }
-
-        parseAssert('locale', locale, 'Cannot be empty');
-        parseAssert(
-            'locale',
-            /^[a-z-]+$/i.test(locale),
-            'Must be a valid locale (letters and dashes/underscores). You can consult the list of codes in: https://wikipedia.org/wiki/List_of_ISO_639-1_codes'
-        );
-        return locale;
+        return language;
     },
     generate(count?: string) {
         if (!count) {
@@ -197,7 +190,7 @@ const configParsers = {
 
         const parsed = Number(count);
         parseAssert('generate', parsed > 0, 'Must be greater than 0');
-        parseAssert('generate', parsed <= 5, 'Must be less or equal to 5');
+        parseAssert('generate', parsed <= 10, 'Must be less or equal to 10');
 
         return parsed;
     },

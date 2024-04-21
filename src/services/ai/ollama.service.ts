@@ -70,7 +70,7 @@ export class OllamaService extends AIService {
     generateStreamChoice$ = (): Observable<ReactiveListChoice> => {
         const defaultPrompt = generatePrompt(
             this.params.userInput,
-            this.params.config.locale,
+            this.params.config.language,
             this.params.config['max-length'],
             this.params.config.prompt
         );
@@ -185,7 +185,7 @@ export class OllamaService extends AIService {
     private async createChatCompletions() {
         const defaultPrompt = generatePrompt(
             this.params.userInput,
-            this.params.config.locale,
+            this.params.config.language,
             this.params.config['max-length'],
             this.params.config.prompt
         );

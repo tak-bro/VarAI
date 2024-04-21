@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 
 import { ValidConfig } from '../../utils/config.js';
 import { generatePrompt } from '../../utils/prompt.js';
+import { extractNumberedList } from '../../utils/utils.js';
 
 // NOTE: get AI Type from key names
 export const AIType = {
@@ -47,8 +48,8 @@ export abstract class AIService {
 
     abstract generateVariableName$(): Observable<ReactiveListChoice>;
 
-    protected buildPrompt(userInput: string, locale: string, completions: number, maxLength: number, prompt: string) {
-        const defaultPrompt = generatePrompt(userInput, locale, maxLength, prompt);
+    protected buildPrompt(userInput: string, language: string, completions: number, maxLength: number, prompt: string) {
+        const defaultPrompt = generatePrompt(userInput, language, maxLength, prompt);
         return `${defaultPrompt}\nPlease just generate ${completions} variable names in numbered list format without any explanation.`;
     }
 
@@ -66,15 +67,9 @@ export abstract class AIService {
     };
 
     protected sanitizeMessage(generatedText: string, maxCount: number) {
-        const messages = generatedText
-            .split('\n')
+        return extractNumberedList(generatedText)
             .map((message: string) => message.trim().replace(/^\d+\.\s/, ''))
             .map((message: string) => message.replace(/`/g, ''))
             .filter((message: string) => !!message);
-
-        if (messages.length > maxCount) {
-            return messages.slice(0, maxCount);
-        }
-        return messages;
     }
 }

@@ -24,7 +24,7 @@ export class OpenAIService extends AIService {
                 this.params.config.OPENAI_PATH,
                 this.params.config.OPENAI_KEY,
                 this.params.config.OPENAI_MODEL,
-                this.params.config.locale,
+                this.params.config.language,
                 this.params.userInput,
                 this.params.config.generate,
                 this.params.config['max-length'],

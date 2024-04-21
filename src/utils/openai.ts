@@ -172,7 +172,7 @@ export const generateVariableName = async (
     path: string,
     apiKey: string,
     model: TiktokenModel,
-    locale: string,
+    language: string,
     userInput: string,
     completions: number,
     maxLength: number,
@@ -192,7 +192,7 @@ export const generateVariableName = async (
                 messages: [
                     {
                         role: 'system',
-                        content: generatePrompt(userInput, locale, maxLength, prompt),
+                        content: generatePrompt(userInput, language, maxLength, prompt),
                     },
                     {
                         role: 'user',
