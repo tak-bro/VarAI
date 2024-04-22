@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/tak-bro/varai/compare/v1.0.0...v1.0.1) (2024-04-22)
+
+
+### 📦 Chores
+
+* change default generate count from 1 to 3 ([a601411](https://github.com/tak-bro/varai/commit/a601411a4ab792d64720bb99ea4890267015dc69))
+
 ## 1.0.0 (2024-04-21)
 
 
