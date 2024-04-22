@@ -183,7 +183,7 @@ const configParsers = {
     },
     generate(count?: string) {
         if (!count) {
-            return 1;
+            return 3;
         }
 
         parseAssert('generate', /^\d+$/.test(count), 'Must be an integer');

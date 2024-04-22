@@ -144,6 +144,10 @@
                         {
                             "type": "chore",
                             "release": "patch"
+                        },
+                        {
+                            "type": "feat",
+                            "release": "patch"
                         }
                     ]
                 }

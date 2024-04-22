@@ -162,15 +162,15 @@ varai --generate <i> # or -g <i>
 ##### `--prompt` or `-p`
 - Additional prompt to let users fine-tune provided prompt
 
+```sh
+varai --prompt <s> # or -p <s>
+```
+
 ##### `--clipboard` or `-c`
 - Copy the selected variable name to the clipboard (default: **true**)
 
 ```sh
 varai --clipboard=false # or -c=false
-```
-
-```sh
-varai --prompt <s> # or -p <s>
 ```
 
 ## Configuration
@@ -236,7 +236,7 @@ varai config set OPENAI_KEY=<your-api-key> generate=3 language=C++
 | `OLLAMA_HOST`     | `http://localhost:11434`               | The Ollama Host                                                                                                         |
 | `OLLAMA_TIMEOUT`  | `100000` ms                            | Request timeout for the Ollama                                                                                          |
 | `OLLAMA_STREAM`   | N/A                                    | Whether to make stream requests (**experimental feature**)                                                              |
-| `locale`          | `en`                                   | Locale for the generated variable names                                                                                 |
+| `language`        | N/A                                    | Code Language to use for the generated variables                                                                        |
 | `generate`        | `3`                                    | Number of variable names to generate                                                                                    |
 | `proxy`           | N/A                                    | Set a HTTP/HTTPS proxy to use for requests(only **OpenAI**)                                                             |
 | `timeout`         | `10000` ms                             | Network request timeout                                                                                                 |
@@ -248,24 +248,22 @@ varai config set OPENAI_KEY=<your-api-key> generate=3 language=C++
 > **Currently, options are set universally. However, there are plans to develop the ability to set individual options in the future.**
 
 ### Available Options by Model
-|                      | locale | generate | proxy |        timeout         | max-length  | max-tokens | temperature | prompt |
-|:--------------------:|:------:|:--------:|:-----:|:----------------------:|:-----------:|:----------:|:-----------:|:------:|
-|      **OpenAI**      |   ✓    |    ✓     |   ✓   |           ✓            |      ✓      |     ✓      |      ✓      |   ✓    |
-| **Anthropic Claude** |   ✓    |    ✓     |       |                        |      ✓      |     ✓      |      ✓      |   ✓    |
-|      **Gemini**      |   ✓    |    ✓     |       |                        |      ✓      |     ✓      |      ✓      |   ✓    |
-|    **Mistral AI**    |   ✓    |    ✓     |       |           ✓            |      ✓      |     ✓      |      ✓      |   ✓    |
-|   **Huggingface**    |   ✓    |    ✓     |       |           ✓            |      ✓      |            |             |   ✓    |
-|     **Clova X**      |   ✓    |    ✓     |       |           ✓            |      ✓      |            |             |   ✓    |
-|      **Ollama**      |   ✓    |    ✓     |       | ✓<br/>(OLLAMA_TIMEOUT) |      ✓      |            |      ✓      |   ✓    |
+|                      | language | generate | proxy |        timeout         | max-length  | max-tokens | temperature | prompt |
+|:--------------------:|:--------:|:--------:|:-----:|:----------------------:|:-----------:|:----------:|:-----------:|:------:|
+|      **OpenAI**      |    ✓     |    ✓     |   ✓   |           ✓            |      ✓      |     ✓      |      ✓      |   ✓    |
+| **Anthropic Claude** |    ✓     |    ✓     |       |                        |      ✓      |     ✓      |      ✓      |   ✓    |
+|      **Gemini**      |    ✓     |    ✓     |       |                        |      ✓      |     ✓      |      ✓      |   ✓    |
+|    **Mistral AI**    |    ✓     |    ✓     |       |           ✓            |      ✓      |     ✓      |      ✓      |   ✓    |
+|   **Huggingface**    |    ✓     |    ✓     |       |           ✓            |      ✓      |            |             |   ✓    |
+|     **Clova X**      |    ✓     |    ✓     |       |           ✓            |      ✓      |            |             |   ✓    |
+|      **Ollama**      |    ✓     |    ✓     |       | ✓<br/>(OLLAMA_TIMEOUT) |      ✓      |            |      ✓      |   ✓    |
 
 
 ### Common Options
 
-##### locale
+##### language
 
-Default: `en`
-
-The locale to use for the generated variable names. Consult the list of codes in: https://wikipedia.org/wiki/List_of_ISO_639_language_codes.
+Code Language to use for the generated variables. (ex. `typescript`, `c++`)
 
 ##### generate
 
