@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/tak-bro/varai/compare/v1.0.1...v1.0.2) (2024-04-23)
+
+
+### ♻️ Refactor
+
+* replace varAIPrompt with constant ([0524dd0](https://github.com/tak-bro/varai/commit/0524dd0aae1b41d4ab2c3b618cdfd214234527ee))
+
 ## [1.0.1](https://github.com/tak-bro/varai/compare/v1.0.0...v1.0.1) (2024-04-22)
 
 
