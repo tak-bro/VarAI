@@ -2,7 +2,7 @@ import { ReactiveListChoice } from 'inquirer-reactive-list-prompt';
 
 import { AIRequestManager } from '../managers/ai-request.manager.js';
 import { ConsoleManager } from '../managers/console.manager.js';
-import { ReactivePromptManager } from '../managers/reactive-prompt.manager.js';
+import { ReactivePromptManager, varAIprompt } from '../managers/reactive-prompt.manager.js';
 import { ApiKeyName, ApiKeyNames } from '../services/ai/ai.service.js';
 import { getConfig } from '../utils/config.js';
 import { KnownError, handleCliError } from '../utils/error.js';
@@ -74,7 +74,7 @@ export default async (
         // NOTE: reactiveListPrompt has 2 blank lines
         consoleManager.moveCursorUp();
 
-        const chosenMessage = answer.varAIPrompt?.value;
+        const chosenMessage = answer[varAIprompt]?.value;
         if (!chosenMessage) {
             throw new KnownError('An error occurred! No selected name');
         }

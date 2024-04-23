@@ -14,6 +14,8 @@ const defaultLoader = {
 
 const emptyMessage = `No variable names were generated`;
 
+export const varAIprompt = `varAIPrompt`;
+
 export class ReactivePromptManager {
     private choices$: BehaviorSubject<ChoiceItem[]> = new BehaviorSubject<ChoiceItem[]>([]);
     private loader$: BehaviorSubject<ReactiveListLoader> = new BehaviorSubject<ReactiveListLoader>(defaultLoader);
@@ -25,7 +27,7 @@ export class ReactivePromptManager {
         inquirer.registerPrompt('reactiveListPrompt', ReactiveListPrompt);
         return inquirer.prompt({
             type: 'reactiveListPrompt',
-            name: 'varAIPrompt',
+            name: varAIprompt,
             message: 'Pick a variable name to use: ',
             emptyMessage: `⚠ ${emptyMessage}`,
             choices$: this.choices$,
