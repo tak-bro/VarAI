@@ -1,3 +1,20 @@
+## [1.0.3](https://github.com/tak-bro/varai/compare/v1.0.2...v1.0.3) (2024-05-07)
+
+
+### ✨ Features
+
+* add support for new anthropic models ([07ea0bf](https://github.com/tak-bro/varai/commit/07ea0bf782652eb185ba9bfd4341177569bfaad4))
+
+
+### 📝 Docs
+
+* update README ([fff2ebe](https://github.com/tak-bro/varai/commit/fff2ebe2c45ffd9421fb59b4bbd34d25b319db7a))
+
+
+### 📦 Chores
+
+* refactor prompt generation to improve formatting ([24152c2](https://github.com/tak-bro/varai/commit/24152c29990eb3e405488782c7116221e04fef38))
+
 ## [1.0.2](https://github.com/tak-bro/varai/compare/v1.0.1...v1.0.2) (2024-04-23)
 
 
