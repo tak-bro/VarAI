@@ -17,10 +17,13 @@
         "clova x",
         "anthropic",
         "claude",
+        "claude2",
+        "claude3",
         "gemini",
         "generative-ai",
         "mistral",
-        "ollama"
+        "ollama",
+        "llama3"
     ],
     "license": "MIT",
     "repository": "tak-bro/varai",
@@ -51,7 +54,7 @@
         ]
     },
     "dependencies": {
-        "@anthropic-ai/sdk": "^0.20.4",
+        "@anthropic-ai/sdk": "^0.20.8",
         "@dqbd/tiktoken": "^1.0.2",
         "@google/generative-ai": "^0.2.1",
         "@inquirer/prompts": "^3.0.0",
@@ -184,7 +187,7 @@
                 "@semantic-release/git",
                 {
                     "assets": ["CHANGELOG.md"],
-                    "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+                    "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
                 }
             ],
             "@semantic-release/npm"

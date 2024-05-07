@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@anthropic-ai/sdk':
-    specifier: ^0.20.4
-    version: 0.20.6
+    specifier: ^0.20.8
+    version: 0.20.8
   '@dqbd/tiktoken':
     specifier: ^1.0.2
     version: 1.0.14
@@ -183,8 +183,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@anthropic-ai/sdk@0.20.6:
-    resolution: {integrity: sha512-vpVWAol+Ih1UkZGUj8DYPuqWDGxBp6M/JYz4nvq2HBT0zKdvi24Z9oznA7tr+HDed78JZrw+nbxs2I8JbTAIiQ==}
+  /@anthropic-ai/sdk@0.20.8:
+    resolution: {integrity: sha512-dTMDrWYIFyoSr9P0b/gT2Nu1scBuEq4LU9SGX901ktP4aQxs2jiSWq6A80pRmVxyjFl3ngFvcOmVVrP0NHNhOg==}
     dependencies:
       '@types/node': 18.19.31
       '@types/node-fetch': 2.6.11

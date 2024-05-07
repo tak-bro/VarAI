@@ -224,7 +224,7 @@ varai config set OPENAI_KEY=<your-api-key> generate=3 language=C++
 | `OPENAI_URL`      | `https://api.openai.com`               | The OpenAI URL                                                                                                          |
 | `OPENAI_PATH`     | `/v1/chat/completions`                 | The OpenAI request pathname                                                                                             |
 | `ANTHROPIC_KEY`   | N/A                                    | The Anthropic API key                                                                                                   |
-| `ANTHROPIC_MODEL` | `claude-2.1`                           | The Anthropic Model to use                                                                                              |
+| `ANTHROPIC_MODEL` | `claude-3-haiku-20240307`              | The Anthropic Model to use                                                                                              |
 | `GEMINI_KEY`      | N/A                                    | The Gemini API key                                                                                                      |
 | `GEMINI_MODEL`    | `gemini-pro`                           | The Gemini Model                                                                                                        |
 | `MISTRAL_KEY`     | N/A                                    | The Mistral API key                                                                                                     |
@@ -368,9 +368,12 @@ The Anthropic API key. To get started with Anthropic Claude, request access to t
 
 ##### ANTHROPIC_MODEL
 
-Default: `claude-2.1`
+Default: `claude-3-haiku-20240307`
 
 Supported:
+- `claude-3-haiku-20240307`
+- `claude-3-sonnet-20240229`
+- `claude-3-opus-20240229`
 - `claude-2.1`
 - `claude-2.0`
 - `claude-instant-1.2`
@@ -433,12 +436,14 @@ The [Huggingface Chat](https://huggingface.co/chat/) Cookie. Please check [how t
 Default: `mistralai/Mixtral-8x7B-Instruct-v0.1`
 
 Supported:
+- `CohereForAI/c4ai-command-r-plus`
+- `meta-llama/Meta-Llama-3-70B-Instruct`
+- `HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1`
 - `mistralai/Mixtral-8x7B-Instruct-v0.1`
-- `meta-llama/Llama-2-70b-chat-hf`
 - `NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO`
-- `codellama/CodeLlama-70b-Instruct-hf`
+- `google/gemma-1.1-7b-it`
 - `mistralai/Mistral-7B-Instruct-v0.2`
-- `openchat/openchat-3.5-0106`
+- `microsoft/Phi-3-mini-4k-instruct`
 
 >  The models mentioned above are subject to change.
 

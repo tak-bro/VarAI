@@ -55,13 +55,16 @@ const configParsers = {
         if (!model || model.length === 0) {
             return `mistralai/Mixtral-8x7B-Instruct-v0.1`;
         }
+
         const supportModels = [
-            'mistralai/Mixtral-8x7B-Instruct-v0.1',
-            'meta-llama/Llama-2-70b-chat-hf',
-            'NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO',
-            'codellama/CodeLlama-70b-Instruct-hf',
-            'mistralai/Mistral-7B-Instruct-v0.2',
-            'openchat/openchat-3.5-0106',
+            `CohereForAI/c4ai-command-r-plus`,
+            `meta-llama/Meta-Llama-3-70B-Instruct`,
+            `HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1`,
+            `mistralai/Mixtral-8x7B-Instruct-v0.1`,
+            `NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO`,
+            `google/gemma-1.1-7b-it`,
+            `mistralai/Mistral-7B-Instruct-v0.2`,
+            `microsoft/Phi-3-mini-4k-instruct`,
         ];
 
         parseAssert('HUGGING_MODEL', supportModels.includes(model), 'Invalid model type of hugging');
@@ -89,10 +92,16 @@ const configParsers = {
     },
     ANTHROPIC_MODEL(model?: string) {
         if (!model || model.length === 0) {
-            return 'claude-2.1';
+            return 'claude-3-haiku-20240307';
         }
-        const supportModels = ['claude-2.1', 'claude-2.0', 'claude-instant-1.2'];
-
+        const supportModels = [
+            'claude-2.1',
+            'claude-2.0',
+            'claude-instant-1.2',
+            'claude-3-haiku-20240307',
+            'claude-3-sonnet-20240229',
+            'claude-3-opus-20240229',
+        ];
         parseAssert('ANTHROPIC_MODEL', supportModels.includes(model), 'Invalid model type of Anthropic');
         return model;
     },
