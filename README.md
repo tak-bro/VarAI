@@ -1,5 +1,6 @@
 <div align="center">
   <div>
+    <img src="https://github.com/tak-bro/varai/blob/main/img/demo-min.gif?raw=true" alt="VarAI"/>
     <h1 align="center">VarAI</h1>
   </div>
 	<p>An AI-powered tool that recommends variable names with various AI</p>
@@ -43,48 +44,39 @@ Unlock the power of AI to streamline your coding process and effortlessly craft 
 npm install -g varai
 ```
 
-2. Retrieve the API key or Cookie you intend to use:
-
-- [OpenAI](https://platform.openai.com/account/api-keys)
-- [Anthropic Claude](https://console.anthropic.com/)
-- [Gemini](https://aistudio.google.com/app/apikey)
-- [Mistral AI](https://console.mistral.ai/)
-- [Huggingface **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
-- [Clova X **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
-
-> You may need to create an account and set up billing.
-
-3. Set API keys you intend to use:
+2. Retrieve and Set API keys or Cookie you intend to use:
 
 It is not necessary to set all keys. **But at least one key must be set up.**
 
-- OpenAI
+> You may need to create an account and set up billing.
+
+- [OpenAI](https://platform.openai.com/account/api-keys)
 ```sh
 varai config set OPENAI_KEY=<your key>
 ```
 
-- Anthropic Claude
+- [Anthropic Claude](https://console.anthropic.com/)
 ```sh
 varai config set ANTHROPIC_KEY=<your key>
 ```
 
-- Gemini
+- [Gemini](https://aistudio.google.com/app/apikey)
 ```sh
 varai config set GEMINI_KEY=<your key>
 ```
 
-- Mistral AI
+- [Mistral AI](https://console.mistral.ai/)
 ```sh
 varai config set MISTRAL_KEY=<your key>
 ```
 
-- Huggingface Chat
+- [Huggingface **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
 ```shell
 # Please be cautious of Escape characters(\", \') in browser cookie string 
 varai config set HUGGING_COOKIE="<your browser cookie>"
 ```
 
-- Clova X
+- [Clova X **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
 ```shell
 # Please be cautious of Escape characters(\", \') in browser cookie string 
 varai config set CLOVAX_COOKIE="<your browser cookie>"
@@ -92,7 +84,7 @@ varai config set CLOVAX_COOKIE="<your browser cookie>"
 
 This will create a `.varai` file in your home directory.
 
-4. Run VarAI with your staged in git repository:
+3. Run *VarAI* with your staged in git repository:
 ```shell
 varai -m "this class is for generating variable names"
 ```
