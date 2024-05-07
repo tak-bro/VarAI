@@ -192,7 +192,7 @@ export const generateVariableName = async (
                 messages: [
                     {
                         role: 'system',
-                        content: generatePrompt(userInput, language, maxLength, prompt),
+                        content: generatePrompt(language, maxLength, prompt),
                     },
                     {
                         role: 'user',

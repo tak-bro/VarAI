@@ -49,8 +49,8 @@ export abstract class AIService {
     abstract generateVariableName$(): Observable<ReactiveListChoice>;
 
     protected buildPrompt(userInput: string, language: string, completions: number, maxLength: number, prompt: string) {
-        const defaultPrompt = generatePrompt(userInput, language, maxLength, prompt);
-        return `${defaultPrompt}\nPlease just generate ${completions} variable names in numbered list format without any explanation.`;
+        const defaultPrompt = generatePrompt(language, maxLength, prompt);
+        return `${defaultPrompt}\nPlease just generate ${completions} variable names in numbered list format without any explanation.\nHere are Description: \n${userInput}`;
     }
 
     protected handleError$ = (error: AIServiceError): Observable<ReactiveListChoice> => {

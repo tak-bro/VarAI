@@ -1,5 +1,6 @@
 <div align="center">
   <div>
+    <img src="https://github.com/tak-bro/varai/blob/main/img/demo-min.gif?raw=true" alt="VarAI"/>
     <h1 align="center">VarAI</h1>
   </div>
 	<p>An AI-powered tool that recommends variable names with various AI</p>
@@ -43,48 +44,39 @@ Unlock the power of AI to streamline your coding process and effortlessly craft 
 npm install -g varai
 ```
 
-2. Retrieve the API key or Cookie you intend to use:
-
-- [OpenAI](https://platform.openai.com/account/api-keys)
-- [Anthropic Claude](https://console.anthropic.com/)
-- [Gemini](https://aistudio.google.com/app/apikey)
-- [Mistral AI](https://console.mistral.ai/)
-- [Huggingface **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
-- [Clova X **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
-
-> You may need to create an account and set up billing.
-
-3. Set API keys you intend to use:
+2. Retrieve and Set API keys or Cookie you intend to use:
 
 It is not necessary to set all keys. **But at least one key must be set up.**
 
-- OpenAI
+> You may need to create an account and set up billing.
+
+- [OpenAI](https://platform.openai.com/account/api-keys)
 ```sh
 varai config set OPENAI_KEY=<your key>
 ```
 
-- Anthropic Claude
+- [Anthropic Claude](https://console.anthropic.com/)
 ```sh
 varai config set ANTHROPIC_KEY=<your key>
 ```
 
-- Gemini
+- [Gemini](https://aistudio.google.com/app/apikey)
 ```sh
 varai config set GEMINI_KEY=<your key>
 ```
 
-- Mistral AI
+- [Mistral AI](https://console.mistral.ai/)
 ```sh
 varai config set MISTRAL_KEY=<your key>
 ```
 
-- Huggingface Chat
+- [Huggingface **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
 ```shell
 # Please be cautious of Escape characters(\", \') in browser cookie string 
 varai config set HUGGING_COOKIE="<your browser cookie>"
 ```
 
-- Clova X
+- [Clova X **(Unofficial)**](https://github.com/tak-bro/varai?tab=readme-ov-file#how-to-get-cookieunofficial-api)
 ```shell
 # Please be cautious of Escape characters(\", \') in browser cookie string 
 varai config set CLOVAX_COOKIE="<your browser cookie>"
@@ -92,7 +84,7 @@ varai config set CLOVAX_COOKIE="<your browser cookie>"
 
 This will create a `.varai` file in your home directory.
 
-4. Run VarAI with your staged in git repository:
+3. Run *VarAI* with your staged in git repository:
 ```shell
 varai -m "this class is for generating variable names"
 ```
@@ -224,7 +216,7 @@ varai config set OPENAI_KEY=<your-api-key> generate=3 language=C++
 | `OPENAI_URL`      | `https://api.openai.com`               | The OpenAI URL                                                                                                          |
 | `OPENAI_PATH`     | `/v1/chat/completions`                 | The OpenAI request pathname                                                                                             |
 | `ANTHROPIC_KEY`   | N/A                                    | The Anthropic API key                                                                                                   |
-| `ANTHROPIC_MODEL` | `claude-2.1`                           | The Anthropic Model to use                                                                                              |
+| `ANTHROPIC_MODEL` | `claude-3-haiku-20240307`              | The Anthropic Model to use                                                                                              |
 | `GEMINI_KEY`      | N/A                                    | The Gemini API key                                                                                                      |
 | `GEMINI_MODEL`    | `gemini-pro`                           | The Gemini Model                                                                                                        |
 | `MISTRAL_KEY`     | N/A                                    | The Mistral API key                                                                                                     |
@@ -368,9 +360,12 @@ The Anthropic API key. To get started with Anthropic Claude, request access to t
 
 ##### ANTHROPIC_MODEL
 
-Default: `claude-2.1`
+Default: `claude-3-haiku-20240307`
 
 Supported:
+- `claude-3-haiku-20240307`
+- `claude-3-sonnet-20240229`
+- `claude-3-opus-20240229`
 - `claude-2.1`
 - `claude-2.0`
 - `claude-instant-1.2`
@@ -433,12 +428,14 @@ The [Huggingface Chat](https://huggingface.co/chat/) Cookie. Please check [how t
 Default: `mistralai/Mixtral-8x7B-Instruct-v0.1`
 
 Supported:
+- `CohereForAI/c4ai-command-r-plus`
+- `meta-llama/Meta-Llama-3-70B-Instruct`
+- `HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1`
 - `mistralai/Mixtral-8x7B-Instruct-v0.1`
-- `meta-llama/Llama-2-70b-chat-hf`
 - `NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO`
-- `codellama/CodeLlama-70b-Instruct-hf`
+- `google/gemma-1.1-7b-it`
 - `mistralai/Mistral-7B-Instruct-v0.2`
-- `openchat/openchat-3.5-0106`
+- `microsoft/Phi-3-mini-4k-instruct`
 
 >  The models mentioned above are subject to change.
 

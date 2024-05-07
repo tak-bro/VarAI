@@ -68,12 +68,7 @@ export class OllamaService extends AIService {
     };
 
     generateStreamChoice$ = (): Observable<ReactiveListChoice> => {
-        const defaultPrompt = generatePrompt(
-            this.params.userInput,
-            this.params.config.language,
-            this.params.config['max-length'],
-            this.params.config.prompt
-        );
+        const defaultPrompt = generatePrompt(this.params.config.language, this.params.config['max-length'], this.params.config.prompt);
         const systemContent = `${defaultPrompt}\nPlease just generate ${this.params.config.generate} variable names in numbered list format without any explanation.`;
 
         const promiseAsyncGenerator: Promise<AsyncGenerator<ChatResponse>> = this.ollama.chat({
@@ -85,7 +80,7 @@ export class OllamaService extends AIService {
                 },
                 {
                     role: 'user',
-                    content: `Here are Variable Description: \n${this.params.userInput}`,
+                    content: `${this.params.userInput}`,
                 },
             ],
             stream: true,
@@ -183,12 +178,7 @@ export class OllamaService extends AIService {
     }
 
     private async createChatCompletions() {
-        const defaultPrompt = generatePrompt(
-            this.params.userInput,
-            this.params.config.language,
-            this.params.config['max-length'],
-            this.params.config.prompt
-        );
+        const defaultPrompt = generatePrompt(this.params.config.language, this.params.config['max-length'], this.params.config.prompt);
         const systemContent = `${defaultPrompt}\nPlease just generate ${this.params.config.generate} variable names in numbered list format without explanation.`;
         const response = await this.ollama.chat({
             model: this.model,
@@ -199,7 +189,7 @@ export class OllamaService extends AIService {
                 },
                 {
                     role: 'user',
-                    content: `Here are Variable Description: \n${this.params.userInput}`,
+                    content: `${this.params.userInput}`,
                 },
             ],
             stream: false,

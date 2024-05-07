@@ -1,0 +1,295 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/tak/workspace/tak-bro/varAI
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 105
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 20
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: VarAI
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+
+  # The size of the font
+  fontSize: 12
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 374
+    content: "\e[?25l\e8\e[0m\e[49m\e[39m\e[27m\e[24m\e[J\e]2;tak@louis-lemon:~/workspace/tak-bro/varAI\a\e]1;..tak-bro/varAI\a\e]7;file://louis-lemon/Users/tak/workspace/tak-bro/varAI\e\\\e]697;OSCUnlock=898c63ba87484282b9970c1a169791e6\a\e]697;Dir=/Users/tak/workspace/tak-bro/varAI\a\e]697;Shell=zsh\a\e]697;ShellPath=/opt/homebrew/Cellar/zsh/5.9/bin/zsh\a\e]697;PID=8594\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys030\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=fg=245\a\e]697;FigAutosuggestionColor=\a\e]697;User=tak\a\e[0m\e[38;5;31m\e[49m\e[39m\e[27m\e[24m\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                                        \r\e[0m\e[49m\e[39m\e[27m\e[24m\e[K\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\e[0m\e[49m\e[39m\r\n\e[A\e[0m\e[49m\e[39m\e[0m\e[49m\e[39m\e[0m\e[49m \e[0m\e[49m\e[38;5;31m \e[1m\e[38;5;31m\e[38;5;39m~\e[0m\e[38;5;39m\e[49m\e[38;5;31m/workspace/tak-bro/\e[1m\e[38;5;31m\e[38;5;39mvarAI\e[0m\e[38;5;39m\e[49m\e[38;5;31m\e[0m\e[38;5;31m\e[49m\e[38;5;31m\e[0m\e[38;5;31m\e[49m \e[0m\e[38;5;31m\e[49m\e[38;5;76m \e[38;5;76m feature/update-claude-model \e[38;5;39m?1\e[0m\e[38;5;39m\e[49m\e[38;5;76m\e[0m\e[38;5;76m\e[49m\e[30m \e[0m\e[30m\e[49m\e[39m\e[38;5;238m····························\e[0m\e[38;5;238m\e[49m\e[30m \e[0m\e[30m\e[49m\e[38;5;66m 13:07:34\e[0m\e[38;5;66m\e[49m\e[38;5;66m\e[0m\e[38;5;66m\e[49m\e[38;5;66m\e[0m\e[38;5;66m\e[49m\e[39m\r\n\e[0m\e[49m\e[39m\e[0m\e[49m\e[38;5;76m❯\e[0m\e[38;5;76m\e[49m\e[38;5;76m\e[0m\e[38;5;76m\e[49m\e[30m\e[0m\e[30m\e[49m\e[39m \e[0m\e[49m\e[39m\e]697;EndPrompt\a\e]697;NewCmd=898c63ba87484282b9970c1a169791e6\a\e[K\e[102C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[102D\e[?1h\e=\e[?25h\e[?2004h"
+  - delay: 374
+    content: v
+  - delay: 7
+    content: "\b\e[1m\e[31mv\e[0m\e[39m\b\e[1m\e[31mv\e[0m\e[39m\e[38;5;245marai -g 2 -l typescript -m \"function name to manage http get request\"\e[39m\e[69D"
+  - delay: 167
+    content: "\b\e[1m\e[31mv\e[1m\e[31ma\e[0m\e[39m"
+  - delay: 101
+    content: "\b\b\e[1m\e[31mv\e[1m\e[31ma\e[1m\e[31mr\e[0m\e[39m"
+  - delay: 158
+    content: "\b\e[1m\e[31mr\e[1m\e[31ma\e[0m\e[39m"
+  - delay: 131
+    content: "\b\e[1m\e[31ma\e[1m\e[31mi\e[0m\e[39m"
+  - delay: 7
+    content: "\b\b\b\b\b\e[0m\e[32mv\e[0m\e[32ma\e[0m\e[32mr\e[0m\e[32ma\e[0m\e[32mi\e[39m"
+  - delay: 279
+    content: "\e[39m \e[39m-\e[39mg\e[39m \e[39m2\e[39m \e[39m-\e[39ml\e[39m \e[39mt\e[39my\e[39mp\e[39me\e[39ms\e[39mc\e[39mr\e[39mi\e[39mp\e[39mt\e[39m \e[39m-\e[39mm\e[39m \e[39m\"\e[39mf\e[39mu\e[39mn\e[39mc\e[39mt\e[39mi\e[39mo\e[39mn\e[39m \e[39mn\e[39ma\e[39mm\e[39me\e[39m \e[39mt\e[39mo\e[39m \e[39mm\e[39ma\e[39mn\e[39ma\e[39mg\e[39me\e[39m \e[39mh\e[39mt\e[39mt\e[39mp\e[39m \e[39mg\e[39me\e[39mt\e[39m \e[39mr\e[39me\e[39mq\e[39mu\e[39me\e[39ms\e[39mt\e[39m\""
+  - delay: 8
+    content: "\e[42D\e[33m\"\e[33mf\e[33mu\e[33mn\e[33mc\e[33mt\e[33mi\e[33mo\e[33mn\e[33m \e[33mn\e[33ma\e[33mm\e[33me\e[33m \e[33mt\e[33mo\e[33m \e[33mm\e[33ma\e[33mn\e[33ma\e[33mg\e[33me\e[33m \e[33mh\e[33mt\e[33mt\e[33mp\e[33m \e[33mg\e[33me\e[33mt\e[33m \e[33mr\e[33me\e[33mq\e[33mu\e[33me\e[33ms\e[33mt\e[33m\"\e[39m"
+  - delay: 965
+    content: "\e[?1l\e>\e[?2004l"
+  - delay: 14
+    content: "\e[?25l\r\r\e[A\e[0m\e[27m\e[24m\e[J\e[0m\e[49m\e[27m\e[24m\e[38;5;76m❯\e[0m\e[38;5;76m\e[49m\e[39m\e[27m\e[24m \e[32mvarai\e[39m -g 2 -l typescript -m \e[33m\"function name to manage http get request\"\e[39m\e[K\e[?25h\r\r\n\e]697;OSCLock=898c63ba87484282b9970c1a169791e6\a\e]697;PreExec\a\e]2;./dist/cli.mjs -g 2 -l typescript -m \a\e]1;varai\a"
+  - delay: 205
+    content: " __   __         _   ___ \r\n \\ \\ / /_ _ _ _ /_\\ |_ _|\r\n  \\ V / _` | '_/ _ \\ | | \r\n   \\_/\\__,_|_|/_/ \\_\\___|\r\n                         \r\n"
+  - delay: 10
+    content: "\e[?25l⚠ No variable names were generated\e[34D\e[34C\e[?25l\e[1G\e[1G\e[36m⠋\e[39m AI is generating variable names"
+  - delay: 82
+    content: "\e[1G\e[0K\e[36m⠙\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠹\e[39m AI is generating variable names"
+  - delay: 80
+    content: "\e[1G\e[0K\e[36m⠸\e[39m AI is generating variable names"
+  - delay: 82
+    content: "\e[1G\e[0K\e[36m⠼\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠴\e[39m AI is generating variable names"
+  - delay: 80
+    content: "\e[1G\e[0K\e[36m⠦\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠧\e[39m AI is generating variable names"
+  - delay: 82
+    content: "\e[1G\e[0K\e[36m⠇\e[39m AI is generating variable names"
+  - delay: 75
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\e[2m(Use arrow keys)\e[22m\r\n\e[36m❯ \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n\r\n\e[0D\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n\e[36m❯ \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n\r\n\e[0D\e[1G\e[0K\e[36m⠏\e[39m AI is generating variable names"
+  - delay: 22
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n\e[36m❯ \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n\r\n\e[0D\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n\e[36m❯ \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n\r\n\e[0D"
+  - delay: 58
+    content: "\e[1G\e[0K\e[36m⠋\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠙\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠹\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠸\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠼\e[39m AI is generating variable names"
+  - delay: 79
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n\e[36m❯ \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n\r\n\e[0D\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n\e[36m❯ \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n\r\n\e[0D\e[1G\e[0K\e[36m⠴\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠦\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠧\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠇\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠏\e[39m AI is generating variable names"
+  - delay: 78
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\e[36m❯ \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[36m\e[49m getRequestHandler\e[39m \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n\r\n\e[0D\e[1G\e[0K\e[36m⠋\e[39m AI is generating variable names"
+  - delay: 82
+    content: "\e[1G\e[0K\e[36m⠙\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠹\e[39m AI is generating variable names"
+  - delay: 80
+    content: "\e[1G\e[0K\e[36m⠸\e[39m AI is generating variable names"
+  - delay: 21
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n\e[36m❯ \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[36m\e[49m HttpGetHandler\e[39m \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n\r\n\e[0D"
+  - delay: 60
+    content: "\e[1G\e[0K\e[36m⠼\e[39m AI is generating variable names"
+  - delay: 66
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n\e[36m❯ \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[36m\e[49m HttpGetHandler\e[39m \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\r\n\e[0D\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n\e[36m❯ \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[36m\e[49m HttpGetHandler\e[39m \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 14
+    content: "\e[1G\e[0K\e[36m⠴\e[39m AI is generating variable names"
+  - delay: 81
+    content: "\e[1G\e[0K\e[36m⠦\e[39m AI is generating variable names"
+  - delay: 82
+    content: "\e[1G\e[0K\e[36m⠧\e[39m AI is generating variable names"
+  - delay: 38
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n\e[36m❯ \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[36m\e[49m GetRequestProcessor\e[39m \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 42
+    content: "\e[1G\e[0K\e[36m⠇\e[39m AI is generating variable names"
+  - delay: 80
+    content: "\e[1G\e[0K\e[36m⠏\e[39m AI is generating variable names"
+  - delay: 22
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n\e[36m❯ \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[36m\e[49m GetRequestProcessor\e[39m \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 60
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 80
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 13
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n\e[36m❯ \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[36m\e[49m httpGetRequest\e[39m \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 67
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 41
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;174;86;48m\e[38;2;255;255;255m\e[1m[Anthropic]\e[22m\e[39m\e[49m getRequestHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n\e[36m❯ \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[36m\e[49m httpGetManager\e[39m \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpRequestManager \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 39
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 80
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 82
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n\e[36m❯ \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpRequestManager \r\n  \e[48;2;254;210;31m\e[38;2;0;0;0m\e[1m[HuggingFace]\e[22m\e[39m\e[49m getReqHandler \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 77
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 82
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 26
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\e[36m❯ \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[36m\e[49m httpRequestManager\e[39m \r\n  \e[48;2;254;210;31m\e[38;2;0;0;0m\e[1m[HuggingFace]\e[22m\e[39m\e[49m getReqHandler \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 54
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 59
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpRequestManager \r\n\e[36m❯ \e[48;2;254;210;31m\e[38;2;0;0;0m\e[1m[HuggingFace]\e[22m\e[39m\e[36m\e[49m getReqHandler\e[39m \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 21
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 80
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 68
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpGetRequestManager \r\n\e[36m❯ \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[36m\e[49m httpRequestManager\e[39m \r\n  \e[48;2;254;210;31m\e[38;2;0;0;0m\e[1m[HuggingFace]\e[22m\e[39m\e[49m getReqHandler \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 12
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 82
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 72
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n\e[36m❯ \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpRequestManager \r\n  \e[48;2;254;210;31m\e[38;2;0;0;0m\e[1m[HuggingFace]\e[22m\e[39m\e[49m getReqHandler \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D"
+  - delay: 8
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 80
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 81
+    content: "\e[1G\e[0K\e[32m✔\e[39m \e[1mVariable names generated\e[22m"
+  - delay: 56
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mPick a variable name to use: \e[22m\e[0m \e[0m\e[36mhttpGetRequestManager\e[39m\r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m HttpGetHandler \r\n  \e[48;2;255;255;255m\e[38;2;0;0;0m\e[1m[Ollama]\e[22m\e[39m\e[49m GetRequestProcessor \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetRequest \r\n  \e[48;2;0;119;255m\e[38;2;255;255;255m\e[1m[Gemini]\e[22m\e[39m\e[49m httpGetManager \r\n\e[36m❯ \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[36m\e[49m httpGetRequestManager\e[39m \r\n  \e[48;2;0;219;155m\e[38;2;255;255;255m\e[1m[CLOVA X]\e[22m\e[39m\e[49m httpRequestManager \r\n  \e[48;2;254;210;31m\e[38;2;0;0;0m\e[1m[HuggingFace]\e[22m\e[39m\e[49m getReqHandler \r\n\e[2m(Move up and down to reveal more choices)\e[22m\r\n\r\n\e[0D\e[1G\e[0K\e[?25h\e[1G\r\n\e[?25h\e[1A"
+  - delay: 7
+    content: "\r\n\e[1m\e[32m✔\e[39m\e[22m \e[1mSuccessfully copied! Press 'Ctrl + V' to paste\e[22m\r\n\e[?25h"
+  - delay: 8
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                                        \r \r\e]2;tak@louis-lemon:~/workspace/tak-bro/varAI\a\e]1;..tak-bro/varAI\a\e]7;file://louis-lemon/Users/tak/workspace/tak-bro/varAI\e\\"
+  - delay: 56
+    content: "\e]697;OSCUnlock=898c63ba87484282b9970c1a169791e6\a\e]697;Dir=/Users/tak/workspace/tak-bro/varAI\a\e]697;Shell=zsh\a\e]697;ShellPath=/opt/homebrew/Cellar/zsh/5.9/bin/zsh\a\e]697;PID=8594\a\e]697;ExitCode=0\a\e]697;TTY=/dev/ttys030\a\e]697;Log=\a\e]697;ZshAutosuggestionColor=fg=245\a\e]697;FigAutosuggestionColor=\a\e]697;User=tak\a\r\e[0m\e[27m\e[24m\e[J\e]697;StartPrompt\a\e[0m\e[49m\e[39m\r\n\r\n\e[A\e[0m\e[49m\e[39m\e[0m\e[49m\e[39m\e[0m\e[49m \e[0m\e[49m\e[38;5;31m \e[1m\e[38;5;31m\e[38;5;39m~\e[0m\e[38;5;39m\e[49m\e[38;5;31m/workspace/tak-bro/\e[1m\e[38;5;31m\e[38;5;39mvarAI\e[0m\e[38;5;39m\e[49m\e[38;5;31m\e[0m\e[38;5;31m\e[49m\e[38;5;31m\e[0m\e[38;5;31m\e[49m \e[0m\e[38;5;31m\e[49m\e[38;5;76m \e[38;5;76m feature/update-claude-model \e[38;5;39m?1\e[0m\e[38;5;39m\e[49m\e[38;5;76m\e[0m\e[38;5;76m\e[49m\e[30m \e[0m\e[30m\e[49m\e[39m\e[38;5;238m·······················\e[0m\e[38;5;238m\e[49m\e[30m \e[0m\e[30m\e[49m\e[38;5;101m 5s\e[0m\e[38;5;101m\e[49m\e[38;5;101m\e[0m\e[38;5;101m\e[49m\e[38;5;101m\e[0m\e[38;5;101m\e[49m\e[38;5;66m  13:07:43\e[0m\e[38;5;66m\e[49m\e[38;5;66m\e[0m\e[38;5;66m\e[49m\e[38;5;66m\e[0m\e[38;5;66m\e[49m\e[39m\r\n\e[0m\e[49m\e[39m\e[0m\e[49m\e[38;5;76m❯\e[0m\e[38;5;76m\e[49m\e[38;5;76m\e[0m\e[38;5;76m\e[49m\e[30m\e[0m\e[30m\e[49m\e[39m \e[0m\e[49m\e[39m\e]697;EndPrompt\a\e]697;NewCmd=898c63ba87484282b9970c1a169791e6\a\e[K\e[102C\e]697;StartPrompt\a\e]697;EndPrompt\a\e[102D\e[?1h\e=\e[?2004h"
+  - delay: 857
+    content: "\e[?2004l\r\r\n"

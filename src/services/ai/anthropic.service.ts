@@ -7,6 +7,7 @@ import { fromPromise } from 'rxjs/internal/observable/innerFrom';
 import { AIService, AIServiceError, AIServiceParams } from './ai.service.js';
 import { KnownError } from '../../utils/error.js';
 import { deduplicateMessages } from '../../utils/openai.js';
+import { generatePrompt } from '../../utils/prompt.js';
 import { DONE, UNDONE, toObservable } from '../../utils/utils.js';
 
 export interface AnthropicServiceError extends AIServiceError {
@@ -53,15 +54,21 @@ export class AnthropicService extends AIService {
             const userInput = this.params.userInput;
             const { language, generate, prompt: userPrompt } = this.params.config;
             const maxLength = this.params.config['max-length'];
-            const prompt = this.buildPrompt(userInput, language, generate, maxLength, userPrompt);
-
-            const result = await this.anthropic.completions.create({
-                model: this.params.config.ANTHROPIC_MODEL,
-                max_tokens_to_sample: this.params.config['max-tokens'],
+            const prompt = this.buildAnthropicPrompt(language, generate, maxLength, userPrompt);
+            const params: Anthropic.MessageCreateParams = {
+                max_tokens: this.params.config['max-tokens'],
                 temperature: this.params.config.temperature,
-                prompt: `${Anthropic.HUMAN_PROMPT} ${prompt}${Anthropic.AI_PROMPT}`,
-            });
-            const completion = result.completion;
+                system: prompt,
+                messages: [
+                    {
+                        role: 'user',
+                        content: userInput,
+                    },
+                ],
+                model: this.params.config.ANTHROPIC_MODEL,
+            };
+            const result: Anthropic.Message = await this.anthropic.messages.create(params);
+            const completion = result.content.map(({ text }) => text).join('');
             return deduplicateMessages(this.sanitizeMessage(completion, generate));
         } catch (error) {
             const errorAsAny = error as any;
@@ -155,4 +162,9 @@ export class AnthropicService extends AIService {
             })
         );
     };
+
+    protected buildAnthropicPrompt(language: string, completions: number, maxLength: number, prompt: string) {
+        const defaultPrompt = generatePrompt(language, maxLength, prompt);
+        return `${defaultPrompt}\nPlease just generate ${completions} variable names in numbered list format without any explanation.`;
+    }
 }
