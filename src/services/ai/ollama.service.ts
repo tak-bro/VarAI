@@ -80,9 +80,12 @@ export class OllamaService extends AIService {
                 },
                 {
                     role: 'user',
-                    content: `${this.params.userInput}`,
+                    content: this.params.userInput,
                 },
             ],
+            options: {
+                temperature: this.params.config.temperature,
+            },
             stream: true,
         });
 
@@ -189,10 +192,13 @@ export class OllamaService extends AIService {
                 },
                 {
                     role: 'user',
-                    content: `${this.params.userInput}`,
+                    content: this.params.userInput,
                 },
             ],
             stream: false,
+            options: {
+                temperature: this.params.config.temperature,
+            },
         });
         return response.message.content;
     }

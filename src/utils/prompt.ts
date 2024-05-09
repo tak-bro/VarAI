@@ -1,4 +1,4 @@
-export const generatePrompt = (language: string, maxLength: number, additionalPrompt: string) =>
+export const generatePrompt = (language: string, maxLength: number, additionalPrompt: string = '') =>
     [
         'Generate suitable names for variables in code for the following description with the given specifications below:',
         language ? `- Code language: ${language}` : '',
