@@ -3,13 +3,16 @@
     <img src="https://github.com/tak-bro/varai/blob/main/img/demo-min.gif?raw=true" alt="VarAI"/>
     <h1 align="center">VarAI</h1>
   </div>
-	<p>An AI-powered tool that recommends variable names with various AI</p>
-	<a aria-label="npm" href="https://www.npmjs.com/package/varai">
-        <img src="https://img.shields.io/npm/v/varai" alt="Current version">
-    </a>
-    <a aria-label="license" href="https://github.com/tak-bro/varai/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/tak-bro/varai.svg" alt="license">
-    </a>
+  <p>An AI-powered tool that recommends variable names with various AI like Ollama, Claude, ChatGPT</p>
+</div>
+
+<div align="center" markdown="1">
+
+[![tak-bro](https://img.shields.io/badge/by-tak--bro-293462?logo=github)](https://env-tak.github.io/)
+[![license](https://img.shields.io/github/license/tak-bro/varai?color=211A4C)](https://github.com/tak-bro/varai/blob/main/LICENSE)
+[![version](https://img.shields.io/npm/v/varai?logo=semanticrelease&label=release&color=A51C2D)](https://www.npmjs.com/package/varai)
+[![downloads](https://img.shields.io/npm/dt/varai?color=F33535&logo=npm)](https://www.npmjs.com/package/varai)
+
 </div>
 
 ---
@@ -44,7 +47,7 @@ Unlock the power of AI to streamline your coding process and effortlessly craft 
 npm install -g varai
 ```
 
-2. Retrieve and Set API keys or Cookie you intend to use:
+2. Retrieve and set API keys or Cookie you intend to use:
 
 It is not necessary to set all keys. **But at least one key must be set up.**
 
@@ -508,7 +511,7 @@ Users are responsible for understanding and abiding by the terms of use, rate li
 
 It is recommended that users thoroughly review the API documentation and adhere to best practices to ensure a positive and compliant experience.
 
-## Please Star⭐️ 
+## Please Star ⭐️ 
 If this project has been helpful to you, I would greatly appreciate it if you could click the Star⭐️ button on this repository!
 
 ## Maintainers
