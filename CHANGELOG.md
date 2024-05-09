@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/tak-bro/varai/compare/v1.0.3...v1.0.4) (2024-05-09)
+
+
+### ✨ Features
+
+* improve ai service to use message stream ([2e23b14](https://github.com/tak-bro/varai/commit/2e23b14320d7799868d924be1335c40b2c2eb044))
+
 ## [1.0.3](https://github.com/tak-bro/varai/compare/v1.0.2...v1.0.3) (2024-05-07)
 
 
