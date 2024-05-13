@@ -12,6 +12,8 @@ import type { TiktokenModel } from '@dqbd/tiktoken';
 const { hasOwnProperty } = Object.prototype;
 export const hasOwn = (object: unknown, key: PropertyKey) => hasOwnProperty.call(object, key);
 
+export const DEFAULT_OLLMA_HOST = 'http://localhost:11434';
+
 const parseAssert = (name: string, condition: any, message: string) => {
     if (!condition) {
         throw new KnownError(`Invalid config property ${name}: ${message}`);
@@ -149,7 +151,7 @@ const configParsers = {
     },
     OLLAMA_HOST(host?: string) {
         if (!host) {
-            return 'http://localhost:11434';
+            return DEFAULT_OLLMA_HOST;
         }
         parseAssert('OLLAMA_HOST', /^https?:\/\//.test(host), 'Must be a valid URL');
         return host;

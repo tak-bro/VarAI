@@ -3,13 +3,13 @@
     <img src="https://github.com/tak-bro/varai/blob/main/img/demo-min.gif?raw=true" alt="VarAI"/>
     <h1 align="center">VarAI</h1>
   </div>
-  <p>An AI-powered tool that recommends variable names with various AI like Ollama, Claude, ChatGPT</p>
+  <p>An AI-powered tool that recommends variable names with Ollama, ChatGPT, Gemini, Claude, Mistral and other AI</p>
 </div>
 
 <div align="center" markdown="1">
 
 [![tak-bro](https://img.shields.io/badge/by-tak--bro-293462?logo=github)](https://env-tak.github.io/)
-[![license](https://img.shields.io/github/license/tak-bro/varai?color=211A4C)](https://github.com/tak-bro/varai/blob/main/LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-211A4C.svg?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTMgNiAzIDFtMCAwLTMgOWE1IDUgMCAwIDAgNi4wMDEgME02IDdsMyA5TTYgN2w2LTJtNiAyIDMtMW0tMyAxLTMgOWE1IDUgMCAwIDAgNi4wMDEgME0xOCA3bDMgOW0tMy05LTYtMm0wLTJ2Mm0wIDE2VjVtMCAxNkg5bTMgMGgzIi8+PC9zdmc+)](https://github.com/tak-bro/varai/blob/main/LICENSE)
 [![version](https://img.shields.io/npm/v/varai?logo=semanticrelease&label=release&color=A51C2D)](https://www.npmjs.com/package/varai)
 [![downloads](https://img.shields.io/npm/dt/varai?color=F33535&logo=npm)](https://www.npmjs.com/package/varai)
 
@@ -101,7 +101,7 @@ You can also use your model for free with [Ollama](https://ollama.com/) and is a
 2. Start it with your model
 
 ```shell
-ollama run llama2 # model you want use. ex) llama3, codellama
+ollama run llama3 # model you want use. ex) codellama, deepseek-coder
 ```
 
 3. Set the model and host
