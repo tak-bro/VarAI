@@ -12,6 +12,8 @@ import type { TiktokenModel } from '@dqbd/tiktoken';
 const { hasOwnProperty } = Object.prototype;
 export const hasOwn = (object: unknown, key: PropertyKey) => hasOwnProperty.call(object, key);
 
+export const DEFAULT_OLLMA_HOST = 'http://localhost:11434';
+
 const parseAssert = (name: string, condition: any, message: string) => {
     if (!condition) {
         throw new KnownError(`Invalid config property ${name}: ${message}`);
@@ -84,9 +86,9 @@ const configParsers = {
     },
     GEMINI_MODEL(model?: string) {
         if (!model || model.length === 0) {
-            return 'gemini-pro';
+            return 'gemini-1.5-flash-latest';
         }
-        const supportModels = ['gemini-pro'];
+        const supportModels = ['gemini-1.5-flash-latest', 'gemini-pro'];
         parseAssert('GEMINI_MODEL', supportModels.includes(model), 'Invalid model type of Gemini');
         return model;
     },
@@ -149,7 +151,7 @@ const configParsers = {
     },
     OLLAMA_HOST(host?: string) {
         if (!host) {
-            return 'http://localhost:11434';
+            return DEFAULT_OLLMA_HOST;
         }
         parseAssert('OLLAMA_HOST', /^https?:\/\//.test(host), 'Must be a valid URL');
         return host;
@@ -239,13 +241,13 @@ const configParsers = {
     },
     'max-length'(maxLength?: string) {
         if (!maxLength) {
-            return 50;
+            return 15;
         }
 
         parseAssert('max-length', /^\d+$/.test(maxLength), 'Must be an integer');
 
         const parsed = Number(maxLength);
-        parseAssert('max-length', parsed >= 20, 'Must be greater than 20 characters');
+        parseAssert('max-length', parsed >= 15, 'Must be greater than 15 characters');
 
         return parsed;
     },
@@ -257,6 +259,17 @@ const configParsers = {
         parseAssert('max-tokens', /^\d+$/.test(maxTokens), 'Must be an integer');
         const parsed = Number(maxTokens);
         return parsed;
+    },
+    logging(enable?: string | boolean) {
+        if (!enable) {
+            return false;
+        }
+        if (typeof enable === 'boolean') {
+            return enable;
+        }
+
+        parseAssert('logging', /^(?:true|false)$/.test(enable), 'Must be a boolean(true or false)');
+        return enable === 'true';
     },
 } as const;
 

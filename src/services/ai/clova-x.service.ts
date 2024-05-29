@@ -5,9 +5,11 @@ import { ReactiveListChoice } from 'inquirer-reactive-list-prompt';
 import { Observable, catchError, concatMap, from, map } from 'rxjs';
 import { fromPromise } from 'rxjs/internal/observable/innerFrom';
 
+
 import { AIService, AIServiceParams } from './ai.service.js';
 import { hasOwn } from '../../utils/config.js';
 import { KnownError } from '../../utils/error.js';
+import { createLogResponse } from '../../utils/log.js';
 import { deduplicateMessages } from '../../utils/openai.js';
 import { HttpRequestBuilder } from '../http/http-request.builder.js';
 
@@ -57,13 +59,15 @@ export class ClovaXService extends AIService {
     private async generateMessage(): Promise<string[]> {
         try {
             const userInput = this.params.userInput;
-            const { language, generate, prompt: userPrompt } = this.params.config;
+            const { language, generate, prompt: userPrompt, logging } = this.params.config;
             const maxLength = this.params.config['max-length'];
             const prompt = this.buildPrompt(userInput, language, generate, maxLength, userPrompt);
             await this.getAllConversationIds();
             const result = await this.sendMessage(prompt);
             const { conversationId, allText } = this.parseSendMessageResult(result);
             await this.deleteConversation(conversationId);
+            logging && createLogResponse('CLOVA X', userInput, prompt, allText);
+
             return deduplicateMessages(this.sanitizeMessage(allText, generate));
         } catch (error) {
             const errorAsAny = error as any;

@@ -2,7 +2,7 @@ import { ReactiveListChoice } from 'inquirer-reactive-list-prompt';
 import { Observable, of } from 'rxjs';
 
 import { ValidConfig } from '../../utils/config.js';
-import { generatePrompt } from '../../utils/prompt.js';
+import { extraPrompt, generateDefaultPrompt } from '../../utils/prompt.js';
 import { extractNumberedList } from '../../utils/utils.js';
 
 // NOTE: get AI Type from key names
@@ -49,8 +49,8 @@ export abstract class AIService {
     abstract generateVariableName$(): Observable<ReactiveListChoice>;
 
     protected buildPrompt(userInput: string, language: string, completions: number, maxLength: number, prompt: string) {
-        const defaultPrompt = generatePrompt(language, maxLength, prompt);
-        return `${defaultPrompt}\nPlease just generate ${completions} variable names in numbered list format without any explanation.\nHere are Description: \n${userInput}`;
+        const defaultPrompt = generateDefaultPrompt(language, maxLength, prompt);
+        return `${defaultPrompt}\n${extraPrompt(completions)}\nHere are Description: \n${userInput}`;
     }
 
     protected handleError$ = (error: AIServiceError): Observable<ReactiveListChoice> => {
@@ -70,6 +70,7 @@ export abstract class AIService {
         return extractNumberedList(generatedText)
             .map((message: string) => message.trim().replace(/^\d+\.\s/, ''))
             .map((message: string) => message.replace(/`/g, ''))
+            .map((message: string) => message.replace(/"/g, ''))
             .filter((message: string) => !!message);
     }
 }

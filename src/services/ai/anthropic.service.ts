@@ -4,10 +4,12 @@ import { ReactiveListChoice } from 'inquirer-reactive-list-prompt';
 import { Observable, catchError, concatMap, filter, from, map, of, scan, tap } from 'rxjs';
 import { fromPromise } from 'rxjs/internal/observable/innerFrom';
 
+
 import { AIService, AIServiceError, AIServiceParams } from './ai.service.js';
 import { KnownError } from '../../utils/error.js';
+import { createLogResponse } from '../../utils/log.js';
 import { deduplicateMessages } from '../../utils/openai.js';
-import { generatePrompt } from '../../utils/prompt.js';
+import { extraPrompt, generateDefaultPrompt } from '../../utils/prompt.js';
 import { DONE, UNDONE, toObservable } from '../../utils/utils.js';
 
 export interface AnthropicServiceError extends AIServiceError {
@@ -52,11 +54,11 @@ export class AnthropicService extends AIService {
     private async generateMessage(): Promise<string[]> {
         try {
             const userInput = this.params.userInput;
-            const { language, generate, prompt: additionalPrompt } = this.params.config;
+            const { language, generate, prompt: additionalPrompt, logging } = this.params.config;
             const maxLength = this.params.config['max-length'];
 
-            const defaultPrompt = generatePrompt(language, maxLength, additionalPrompt);
-            const systemPrompt = `${defaultPrompt}\nPlease just generate ${generate} variable names in numbered list format without any explanation.`;
+            const defaultPrompt = generateDefaultPrompt(language, maxLength, additionalPrompt);
+            const systemPrompt = `${defaultPrompt}\n${extraPrompt(generate)}`;
 
             const params: Anthropic.MessageCreateParams = {
                 max_tokens: this.params.config['max-tokens'],
@@ -72,6 +74,7 @@ export class AnthropicService extends AIService {
             };
             const result: Anthropic.Message = await this.anthropic.messages.create(params);
             const completion = result.content.map(({ text }) => text).join('');
+            logging && createLogResponse('Anthropic', userInput, systemPrompt, completion);
             return deduplicateMessages(this.sanitizeMessage(completion, generate));
         } catch (error) {
             const errorAsAny = error as any;
@@ -98,6 +101,15 @@ export class AnthropicService extends AIService {
                 const isDone = data.description === DONE;
                 if (isDone) {
                     const messages = deduplicateMessages(this.sanitizeMessage(data.value, this.params.config.generate));
+
+                    // TODO: refactor below
+                    const userInput = this.params.userInput;
+                    const { language, generate, prompt: additionalPrompt, logging } = this.params.config;
+                    const maxLength = this.params.config['max-length'];
+                    const defaultPrompt = generateDefaultPrompt(language, maxLength, additionalPrompt);
+                    const systemPrompt = `${defaultPrompt}\n${extraPrompt(generate)}`;
+                    logging && createLogResponse('Anthropic', userInput, systemPrompt, data.value);
+
                     const isFailedExtract = !messages || messages.length === 0;
                     if (isFailedExtract) {
                         return [
@@ -140,8 +152,8 @@ export class AnthropicService extends AIService {
         const { language, generate, prompt: additionalPrompt } = this.params.config;
         const maxLength = this.params.config['max-length'];
 
-        const defaultPrompt = generatePrompt(language, maxLength, additionalPrompt);
-        const systemPrompt = `${defaultPrompt}\nPlease just generate ${generate} variable names in numbered list format without any explanation.`;
+        const defaultPrompt = generateDefaultPrompt(language, maxLength, additionalPrompt);
+        const systemPrompt = `${defaultPrompt}\n${extraPrompt(generate)}`;
 
         const params: Anthropic.MessageCreateParams = {
             max_tokens: this.params.config['max-tokens'],
