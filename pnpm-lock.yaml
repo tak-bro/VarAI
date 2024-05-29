@@ -12,11 +12,14 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.14
   '@google/generative-ai':
-    specifier: ^0.9.0
-    version: 0.9.0
+    specifier: ^0.11.4
+    version: 0.11.4
   '@inquirer/prompts':
     specifier: ^3.0.0
     version: 3.3.2
+  '@pacote/xxhash':
+    specifier: ^0.3.2
+    version: 0.3.2
   axios:
     specifier: ^1.6.8
     version: 1.6.8
@@ -467,8 +470,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@google/generative-ai@0.9.0:
-    resolution: {integrity: sha512-tJo+4ITV6yDo0EatG9mENOevQp6NyB28LntujzkehXDK5lY/fK7hJdelBJCriVMivS9lfHKjfML9lMQMOWuuCA==}
+  /@google/generative-ai@0.11.4:
+    resolution: {integrity: sha512-hlw+E9Prv9aUIQISRnLSXi4rukFqKe5WhxPvzBccTvIvXjw2BHMFOJWSC/Gq7WE0W+L/qRHGmYxopmx9qjrB9w==}
     engines: {node: '>=18.0.0'}
     dev: false
 
@@ -768,6 +771,16 @@ packages:
     dependencies:
       '@octokit/openapi-types': 22.1.0
     dev: true
+
+  /@pacote/u64@0.2.2:
+    resolution: {integrity: sha512-J4xs42l+Anz3/Qq6ocSWq4OSub7nn9DfNHIWC4dd4XPQlBIzKbE2Qf65m9W+ogYMMNzKRwJ2kbqq1RT4sMPfKg==}
+    dev: false
+
+  /@pacote/xxhash@0.3.2:
+    resolution: {integrity: sha512-vj6qcyl9kaNXZFZ6xsm8hREMRF2wHk70X9okGVPua0bcL052ZHLvYnxIbc9Bdv6lX/9qvxjg9E0ufi7+CFB6NA==}
+    dependencies:
+      '@pacote/u64': 0.2.2
+    dev: false
 
   /@pnpm/config.env-replace@1.1.0:
     resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}

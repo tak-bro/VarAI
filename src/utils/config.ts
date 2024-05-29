@@ -86,9 +86,9 @@ const configParsers = {
     },
     GEMINI_MODEL(model?: string) {
         if (!model || model.length === 0) {
-            return 'gemini-pro';
+            return 'gemini-1.5-flash-latest';
         }
-        const supportModels = ['gemini-pro'];
+        const supportModels = ['gemini-1.5-flash-latest', 'gemini-pro'];
         parseAssert('GEMINI_MODEL', supportModels.includes(model), 'Invalid model type of Gemini');
         return model;
     },
@@ -241,13 +241,13 @@ const configParsers = {
     },
     'max-length'(maxLength?: string) {
         if (!maxLength) {
-            return 50;
+            return 15;
         }
 
         parseAssert('max-length', /^\d+$/.test(maxLength), 'Must be an integer');
 
         const parsed = Number(maxLength);
-        parseAssert('max-length', parsed >= 20, 'Must be greater than 20 characters');
+        parseAssert('max-length', parsed >= 15, 'Must be greater than 15 characters');
 
         return parsed;
     },
@@ -259,6 +259,17 @@ const configParsers = {
         parseAssert('max-tokens', /^\d+$/.test(maxTokens), 'Must be an integer');
         const parsed = Number(maxTokens);
         return parsed;
+    },
+    logging(enable?: string | boolean) {
+        if (!enable) {
+            return false;
+        }
+        if (typeof enable === 'boolean') {
+            return enable;
+        }
+
+        parseAssert('logging', /^(?:true|false)$/.test(enable), 'Must be a boolean(true or false)');
+        return enable === 'true';
     },
 } as const;
 

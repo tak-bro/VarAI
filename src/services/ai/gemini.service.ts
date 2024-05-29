@@ -4,8 +4,10 @@ import { ReactiveListChoice } from 'inquirer-reactive-list-prompt';
 import { Observable, catchError, concatMap, from, map, of } from 'rxjs';
 import { fromPromise } from 'rxjs/internal/observable/innerFrom';
 
+
 import { AIService, AIServiceError, AIServiceParams } from './ai.service.js';
 import { KnownError } from '../../utils/error.js';
+import { createLogResponse } from '../../utils/log.js';
 import { deduplicateMessages } from '../../utils/openai.js';
 
 export class GeminiService extends AIService {
@@ -37,7 +39,7 @@ export class GeminiService extends AIService {
     private async generateMessage(): Promise<string[]> {
         try {
             const userInput = this.params.userInput;
-            const { language, generate, prompt: userPrompt } = this.params.config;
+            const { language, generate, prompt: userPrompt, logging } = this.params.config;
             const maxLength = this.params.config['max-length'];
             const prompt = this.buildPrompt(userInput, language, generate, maxLength, userPrompt);
 
@@ -52,6 +54,7 @@ export class GeminiService extends AIService {
             const result = await model.generateContent(prompt);
             const response = await result.response;
             const completion = response.text();
+            logging && createLogResponse('Gemini', userInput, prompt, completion);
             return deduplicateMessages(this.sanitizeMessage(completion, generate));
         } catch (error) {
             const errorAsAny = error as any;

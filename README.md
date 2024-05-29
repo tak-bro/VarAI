@@ -114,7 +114,7 @@ varai config set OLLAMA_TIMEOUT=<timout> # Optional. default is 100000ms (100s)
 
 > If you want to use ollama, you must set **OLLAMA_MODEL**.
 
-4. Run VarAI with your staged in git repository
+4. Run _VarAI_ with your staged in git repository
 ```shell
 varai -m "this class is managing session"
 ```
@@ -126,7 +126,7 @@ varai -m "this class is managing session"
 You can call `varai` directly to generate a variable name for your message:
 
 ```sh
-varai -m "Please generate some class names for managing session"
+varai -m "class names for managing session"
 ```
 
 #### CLI Options
@@ -221,7 +221,7 @@ varai config set OPENAI_KEY=<your-api-key> generate=3 language=C++
 | `ANTHROPIC_KEY`   | N/A                                    | The Anthropic API key                                                                                                   |
 | `ANTHROPIC_MODEL` | `claude-3-haiku-20240307`              | The Anthropic Model to use                                                                                              |
 | `GEMINI_KEY`      | N/A                                    | The Gemini API key                                                                                                      |
-| `GEMINI_MODEL`    | `gemini-pro`                           | The Gemini Model                                                                                                        |
+| `GEMINI_MODEL`    | `gemini-1.5-flash-latest`              | The Gemini Model                                                                                                        |
 | `MISTRAL_KEY`     | N/A                                    | The Mistral API key                                                                                                     |
 | `MISTRAL_MODEL`   | `mistral-tiny`                         | The Mistral Model to use                                                                                                |
 | `HUGGING_COOKIE`  | N/A                                    | The HuggingFace Cookie string                                                                                           |
@@ -239,19 +239,20 @@ varai config set OPENAI_KEY=<your-api-key> generate=3 language=C++
 | `max-tokens`      | `200`                                  | The maximum number of tokens that the AI models can generate (for **Open AI, Anthropic, Gemini, Mistral**)              |
 | `temperature`     | `0.7`                                  | The temperature (0.0-2.0) is used to control the randomness of the output (for **Open AI, Anthropic, Gemini, Mistral**) |
 | `prompt`          | N/A                                    | Additional prompt to let users fine-tune provided prompt                                                                |
+| `logging`         | `false`                                | Whether to log AI reponses for debugging (true or false)                                                                |
 
 > **Currently, options are set universally. However, there are plans to develop the ability to set individual options in the future.**
 
 ### Available Options by Model
-|                      | language | generate | proxy |        timeout         | max-length  | max-tokens | temperature | prompt |
-|:--------------------:|:--------:|:--------:|:-----:|:----------------------:|:-----------:|:----------:|:-----------:|:------:|
-|      **OpenAI**      |    ✓     |    ✓     |   ✓   |           ✓            |      ✓      |     ✓      |      ✓      |   ✓    |
-| **Anthropic Claude** |    ✓     |    ✓     |       |                        |      ✓      |     ✓      |      ✓      |   ✓    |
-|      **Gemini**      |    ✓     |    ✓     |       |                        |      ✓      |     ✓      |      ✓      |   ✓    |
-|    **Mistral AI**    |    ✓     |    ✓     |       |           ✓            |      ✓      |     ✓      |      ✓      |   ✓    |
-|   **Huggingface**    |    ✓     |    ✓     |       |           ✓            |      ✓      |            |             |   ✓    |
-|     **Clova X**      |    ✓     |    ✓     |       |           ✓            |      ✓      |            |             |   ✓    |
-|      **Ollama**      |    ✓     |    ✓     |       | ✓<br/>(OLLAMA_TIMEOUT) |      ✓      |            |      ✓      |   ✓    |
+|                      | language | generate | proxy |        timeout        | max-length  | max-tokens | temperature | prompt |
+|:--------------------:|:--------:|:--------:|:-----:|:---------------------:|:-----------:|:----------:|:-----------:|:------:|
+|      **OpenAI**      |    ✓     |    ✓     |   ✓   |           ✓           |      ✓      |     ✓      |      ✓      |   ✓    |
+| **Anthropic Claude** |    ✓     |    ✓     |       |                       |      ✓      |     ✓      |      ✓      |   ✓    |
+|      **Gemini**      |    ✓     |    ✓     |       |                       |      ✓      |     ✓      |      ✓      |   ✓    |
+|    **Mistral AI**    |    ✓     |    ✓     |       |           ✓           |      ✓      |     ✓      |      ✓      |   ✓    |
+|   **Huggingface**    |    ✓     |    ✓     |       |           ✓           |      ✓      |            |             |   ✓    |
+|     **Clova X**      |    ✓     |    ✓     |       |           ✓           |      ✓      |            |             |   ✓    |
+|      **Ollama**      |    ✓     |    ✓     |       | ⚠<br/>(OLLAMA_TIMEOUT) |      ✓      |            |      ✓      |   ✓    |
 
 
 ### Common Options
@@ -325,6 +326,15 @@ Additional prompt to let users fine-tune provided prompt. Users provide extra in
 varai config set prompt="Do not mention config changes"
 ```
 
+##### logging
+
+Default: `false`
+
+Option that allows users to decide whether to generate a log file capturing the responses.
+The log files will be stored in the `~/.varai_log` directory(user's home).
+
+![log-path](https://github.com/tak-bro/varai/blob/main/img/log_path.png?raw=true)
+
 ### OPEN AI
 
 ##### OPENAI_KEY
@@ -343,13 +353,13 @@ The Chat Completions (`/v1/chat/completions`) model to use. Consult the list of 
 varai config set OPENAI_MODEL=gpt-4
 ```
 
-#### OPENAI_URL
+##### OPENAI_URL
 
 Default: `https://api.openai.com`
 
 The OpenAI URL. Both https and http protocols supported. It allows to run local OpenAI-compatible server.
 
-#### OPENAI_PATH
+##### OPENAI_PATH
 
 Default: `/v1/chat/completions`
 
@@ -385,12 +395,13 @@ The Gemini API key. If you don't have one, create a key in [Google AI Studio](ht
 
 ##### GEMINI_MODEL
 
-Default: `gemini-pro`
+Default: `gemini-1.5-flash-latest`
 
 Supported:
+- `gemini-1.5-flash-latest`
 - `gemini-pro`
 
-> Currently supporting only one model, but as Gemini starts supporting other models, it will be updated.
+> The models mentioned above are subject to change.
 
 ### MISTRAL
 

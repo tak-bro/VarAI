@@ -9,7 +9,8 @@ import {
 import createHttpsProxyAgent from 'https-proxy-agent';
 
 import { KnownError } from './error.js';
-import { generatePrompt } from './prompt.js';
+import { createLogResponse } from './log.js';
+import { generateDefaultPrompt } from './prompt.js';
 
 import type { ClientRequest, IncomingMessage } from 'http';
 import type { CreateChatCompletionRequest, CreateChatCompletionResponse } from 'openai';
@@ -180,9 +181,12 @@ export const generateVariableName = async (
     maxTokens: number,
     temperature: number,
     prompt: string,
+    logging: boolean,
     proxy?: string
 ) => {
     try {
+        const systemPrompt = generateDefaultPrompt(language, maxLength, prompt);
+
         const completion = await createChatCompletion(
             url,
             path,
@@ -192,7 +196,7 @@ export const generateVariableName = async (
                 messages: [
                     {
                         role: 'system',
-                        content: generatePrompt(language, maxLength, prompt),
+                        content: systemPrompt,
                     },
                     {
                         role: 'user',
@@ -211,9 +215,16 @@ export const generateVariableName = async (
             proxy
         );
 
-        return deduplicateMessages(
+        const resultMessages = deduplicateMessages(
             completion.choices.filter(choice => choice.message?.content).map(choice => sanitizeMessage(choice.message!.content as string))
         );
+
+        const fullText = completion.choices
+            .filter(choice => choice.message?.content)
+            .map(choice => sanitizeMessage(choice.message!.content as string))
+            .join();
+        logging && createLogResponse('OPEN AI', userInput, systemPrompt, fullText);
+        return resultMessages;
     } catch (error) {
         const errorAsAny = error as any;
         if (errorAsAny.code === 'ENOTFOUND') {

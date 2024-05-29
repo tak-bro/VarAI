@@ -1,6 +1,6 @@
 {
     "name": "varai",
-    "version": "0.0.0-semantic-release",
+    "version": "1.0.4",
     "description": "An AI-powered tool that recommends variable names with various AI",
     "keywords": [
         "cli",
@@ -22,6 +22,7 @@
         "claude2",
         "claude3",
         "gemini",
+        "gemini-pro",
         "generative-ai",
         "mistral",
         "ollama",
@@ -37,7 +38,8 @@
         "dist"
     ],
     "bin": {
-        "varai": "./dist/cli.mjs"
+        "varai": "./dist/cli.mjs",
+        "vai": "./dist/cli.mjs"
     },
     "scripts": {
         "prepare": "simple-git-hooks",
@@ -60,8 +62,9 @@
     "dependencies": {
         "@anthropic-ai/sdk": "^0.20.8",
         "@dqbd/tiktoken": "^1.0.2",
-        "@google/generative-ai": "^0.9.0",
+        "@google/generative-ai": "^0.11.4",
         "@inquirer/prompts": "^3.0.0",
+        "@pacote/xxhash": "^0.3.2",
         "axios": "^1.6.8",
         "chalk": "^5.3.0",
         "copy-paste": "^1.5.3",
@@ -155,6 +158,14 @@
                         {
                             "type": "feat",
                             "release": "patch"
+                        },
+                        {
+                            "scope": "minor",
+                            "release": "minor"
+                        },
+                        {
+                            "scope": "major",
+                            "release": "major"
                         }
                     ]
                 }
@@ -165,17 +176,61 @@
                     "preset": "conventionalcommits",
                     "presetConfig": {
                         "types": [
-                            { "type": "feat", "section": "✨ Features", "hidden": false },
-                            { "type": "fix", "section": "🐛 Bug Fixes", "hidden": false },
-                            { "type": "perf", "section": "🌈 Performance", "hidden": false },
-                            { "type": "refactor", "section": "♻️ Refactor", "hidden": false },
-                            { "type": "style", "section": "💄 Styles", "hidden": false },
-                            { "type": "revert", "section": "🕐 Reverts", "hidden": false },
-                            { "type": "ci", "section": "💫 CI/CD", "hidden": false },
-                            { "type": "test", "section": "✅ Tests", "hidden": false },
-                            { "type": "chore", "section": "📦 Chores", "hidden": false },
-                            { "type": "build", "section": "🔥 Build", "hidden": false },
-                            { "type": "docs", "section": "📝 Docs", "hidden": true }
+                            {
+                                "type": "feat",
+                                "section": "✨ Features",
+                                "hidden": false
+                            },
+                            {
+                                "type": "fix",
+                                "section": "🐛 Bug Fixes",
+                                "hidden": false
+                            },
+                            {
+                                "type": "perf",
+                                "section": "🌈 Performance",
+                                "hidden": false
+                            },
+                            {
+                                "type": "refactor",
+                                "section": "♻️ Refactor",
+                                "hidden": false
+                            },
+                            {
+                                "type": "style",
+                                "section": "💄 Styles",
+                                "hidden": false
+                            },
+                            {
+                                "type": "revert",
+                                "section": "🕐 Reverts",
+                                "hidden": false
+                            },
+                            {
+                                "type": "ci",
+                                "section": "💫 CI/CD",
+                                "hidden": false
+                            },
+                            {
+                                "type": "test",
+                                "section": "✅ Tests",
+                                "hidden": false
+                            },
+                            {
+                                "type": "chore",
+                                "section": "📦 Chores",
+                                "hidden": false
+                            },
+                            {
+                                "type": "build",
+                                "section": "🔥 Build",
+                                "hidden": false
+                            },
+                            {
+                                "type": "docs",
+                                "section": "📝 Docs",
+                                "hidden": true
+                            }
                         ]
                     }
                 }
@@ -186,15 +241,18 @@
                     "changelogFile": "CHANGELOG.md"
                 }
             ],
-            "@semantic-release/github",
+            "@semantic-release/npm",
             [
                 "@semantic-release/git",
                 {
-                    "assets": ["CHANGELOG.md"],
+                    "assets": [
+                        "CHANGELOG.md",
+                        "package.json"
+                    ],
                     "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
                 }
             ],
-            "@semantic-release/npm"
+            "@semantic-release/github"
         ]
     }
 }
