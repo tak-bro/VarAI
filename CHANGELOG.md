@@ -1,3 +1,20 @@
+## [1.0.5](https://github.com/tak-bro/varai/compare/v1.0.4...v1.0.5) (2024-05-29)
+
+
+### ✨ Features
+
+* add logging option ([9ecbfd0](https://github.com/tak-bro/varai/commit/9ecbfd00081047229504e253c70bc55e35baaf8a))
+
+
+### ♻️ Refactor
+
+* replace localhost url with default constant and add DEFAULT_OLLMA_HOST to config.ts ([2db1505](https://github.com/tak-bro/varai/commit/2db15050ebf08e589a94583d40d4de0143238674))
+
+
+### 📦 Chores
+
+* add log_path img ([5bc58e3](https://github.com/tak-bro/varai/commit/5bc58e342a45b3640c17c1fc214f5ecd9695b0c6))
+
 ## [1.0.4](https://github.com/tak-bro/varai/compare/v1.0.3...v1.0.4) (2024-05-09)
 
 
